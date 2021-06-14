@@ -1,21 +1,12 @@
 "use strict";
-
-let p1 = document.querySelector("#p1");
-let p2 = document.querySelector("#p2");
-let p3 = document.querySelector("#p3");
-let p4 = document.querySelector("#p4");
-let p5 = document.querySelector("#p5");
-
-function exclamation() {
-    this.innerHTML+="!";
-}
-
-
-effef
-
-
-p1.addEventListener("click", exclamation);
-p2.addEventListener("click", exclamation);
-p3.addEventListener("click", exclamation);
-p4.addEventListener("click", exclamation);
-p5.addEventListener("click", exclamation);
+let ul = document.getElementById("ul");
+ul.addEventListener("click",function(e){
+   console.log(e.target.tagName);
+    if(e.target.tagName == "LI") {
+        e.target.innerHTML+="!";
+    }
+    else {
+        let li = document.createElement("li");
+        e.target.after(li);
+    }
+})
